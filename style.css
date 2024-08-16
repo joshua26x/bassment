@@ -1,0 +1,217 @@
+body {
+    font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    animation: fadeIn 1s ease-in;
+}
+header {
+    background-color: #000;
+    color: #ff0000;
+    padding: 20px;
+    text-align: center;
+    animation: fadeInDown 1s ease-in;
+}
+h1 {
+    margin: 0;
+    animation: textGlow 1.5s infinite alternate;
+}
+nav {
+    background-color: #1a1a1a;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+}
+nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ff0000;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+footer {
+    background-color: #000;
+    color: #ff0000;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeInUp 1s ease-in;
+}
+.product {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product h3 {
+    margin-top: 0;
+}
+.product p {
+    margin-bottom: 10px;
+}
+.product button {
+    background-color: #333;
+    color: #ff0000;
+    padding: 10px 20px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+    font-family: 'VT323', monospace;
+    margin-right: 10px;
+}
+.product button:hover {
+    background-color: #ff0000;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Normal Products */
+.normal-product {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+.normal-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* Slipknot Collaboration Section */
+.slipknot-section {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: #000;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    animation: slideInUp 1s ease-in-out;
+}
+.slipknot-section h2 {
+    margin-top: 0;
+    font-size: 36px;
+    animation: textGlowRed 1.5s infinite alternate;
+}
+.slipknot-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Slipknot Products */
+.slipknot-product {
+    background-color: #0d0d0d;
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+.slipknot-product h3 {
+    color: #ff0000;
+}
+.slipknot-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff0000;
+}
+.slipknot-product button {
+    background-color: #0d0d0d;
+    color: #ff0000;
+    border-color: #ff0000;
+}
+.slipknot-product button:hover {
+    background-color: #ff0000;
+    color: #0d0d0d;
+}
+
+/* Gaming Products Section */
+.gaming-section {
+    margin-top: 50px;
+    padding: 40px;
+    background-color: #1a1a1a;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 10px;
+    animation: slideInUp 1s ease-in-out;
+}
+.gaming-section h2 {
+    margin-top: 0;
+    font-size: 36px;
+    animation: textGlowRed 1.5s infinite alternate;
+}
+.gaming-section p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Gaming Products */
+.gaming-product {
+    background-color: #000;
+    border: 1px solid #ff0000;
+    color: #ff0000;
+}
+.gaming-product h3 {
+    color: #ff0000;
+}
+.gaming-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff0000;
+}
+.gaming-product button {
+    background-color: #000;
+    color: #ff0000;
+    border-color: #ff0000;
+}
+.gaming-product button:hover {
+    background-color: #ff0000;
+    color: #000;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+    to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000; }
+}
+
+@keyframes textGlowRed {
+    from { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+    to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000; }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
