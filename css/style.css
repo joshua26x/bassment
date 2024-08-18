@@ -38,7 +38,7 @@ header .logo img {
 .flicker {
     letter-spacing: 5px;
     font-size: 48px;
-    animation: flickerAnimation 2s infinite;
+    animation: flickerAnimation 4s infinite;
 }
 
 @keyframes flickerAnimation {
