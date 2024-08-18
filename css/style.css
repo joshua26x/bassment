@@ -37,7 +37,7 @@ header .logo img {
 /* Main Header Flicker Effect */
 .flicker {
     letter-spacing: 15px;
-    font-size: 48px;
+    font-size: 56px;
     animation: flickerAnimation 4s infinite;
 }
 
