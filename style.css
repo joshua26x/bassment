@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+    font-family: 'VT323', monospace;
+    background-color: #0d0d0d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+
+header {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ff0000;
+    animation: fadeInDown 1s ease-in-out;
+    position: relative;
+}
+
+header .logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Main Header Flicker Effect */
+.flicker {
+    letter-spacing: 10px;
+    font-size: 48px;
+    animation: flickerAnimation 2s infinite;
+}
+
+@keyframes flickerAnimation {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+nav {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 2px solid #ff0000;
+}
+
+nav a {
+    color: #ff0000;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 36px;
+    animation: textGlow 1.5s infinite alternate;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Product Styles */
+.product {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #ff0000;
+    animation: fadeInUp 1s ease-in-out;
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.product img {
+    max-width: 300px;
+    height: auto;
+    filter: grayscale(100%) brightness(70%) contrast(150%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.product img:hover {
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+    transform: scale(1.1);
+}
+
+button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+/* Slipknot Collaboration Styles */
+.slipknot-section h2 {
+    color: #fff;
+    text-shadow: 0 0 10px #000, 0 0 20px #ff0000;
+}
+
+.slipknot-product {
+    border: 1px solid #ff0000;
+    background-color: #0d0d0d;
+}
+
+/* Animation Definitions */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+    }
+    to {
+        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+    }
+}
