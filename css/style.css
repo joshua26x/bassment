@@ -44,7 +44,7 @@ header .logo img {
 
 
 @keyframes flickerAnimation {
-    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 80% {
         opacity: 0.8;
         text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
     }
