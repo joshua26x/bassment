@@ -14,29 +14,33 @@ header {
     border-bottom: 1px solid #330000;
 }
 
+/* LOGO CONTROL */
 .logo {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 70px;
-    letter-spacing: 8px;
+    font-size: clamp(40px, 8vw, 80px);
+    letter-spacing: 10px;
     color: #ff1a1a;
+    text-align: center;
     text-shadow:
         0 0 4px rgba(255,0,0,0.6),
         0 0 12px rgba(255,0,0,0.4),
         0 0 24px rgba(255,0,0,0.2);
 }
 
+/* Desktop = Single Line */
+.logo span {
+    display: inline-block;
+}
+
+/* Mobile = Split */
 @media (max-width: 768px) {
-    .logo {
-        flex-direction: column;
-        font-size: 50px;
-        letter-spacing: 6px;
+    .logo span {
+        display: block;
     }
 }
 
 .tagline {
     opacity: 0.7;
+    margin-top: 10px;
 }
 
 /* NAV */
@@ -72,7 +76,7 @@ nav a:hover {
     border-radius: 50%;
 }
 
-/* CONTAINER */
+/* SECTIONS */
 .container {
     max-width: 1200px;
     margin: auto;
