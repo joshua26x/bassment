@@ -1,170 +1,140 @@
-body {
-    font-family: 'VT323', monospace;
+* {
     margin: 0;
-    background: #0b0b0b;
-    color: white;
-    scroll-behavior: smooth;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* HEADER */
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: url('images/bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Dark overlay for readability */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
 header {
     text-align: center;
-    padding: 40px 20px;
-    background: #111;
-    border-bottom: 1px solid #330000;
+    padding: 60px 20px 30px;
 }
 
-/* LOGO CONTROL */
 .logo {
     font-size: clamp(40px, 8vw, 80px);
     letter-spacing: 10px;
     color: #ff1a1a;
-    text-align: center;
     text-shadow:
-        0 0 4px rgba(255,0,0,0.6),
-        0 0 12px rgba(255,0,0,0.4),
-        0 0 24px rgba(255,0,0,0.2);
+        0 0 4px rgba(255,0,0,0.7),
+        0 0 12px rgba(255,0,0,0.5),
+        0 0 30px rgba(255,0,0,0.3);
 }
 
-/* Desktop = Single Line */
+/* Desktop single line */
 .logo span {
     display: inline-block;
 }
 
-/* Mobile = Split */
+/* Mobile split */
 @media (max-width: 768px) {
     .logo span {
         display: block;
     }
 }
 
+/* Flicker Animation */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+        text-shadow:
+            0 0 4px rgba(255,0,0,0.7),
+            0 0 12px rgba(255,0,0,0.5),
+            0 0 30px rgba(255,0,0,0.3);
+    }
+    20%, 24%, 55% {
+        opacity: 0.6;
+        text-shadow: none;
+    }
+}
+
+.flicker {
+    animation: flicker 3s infinite;
+}
+
 .tagline {
-    opacity: 0.7;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 18px;
+    opacity: 0.8;
 }
 
-/* NAV */
-nav {
-    position: sticky;
-    top: 0;
-    background: #111;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #330000;
-    z-index: 1000;
+.products {
+    padding: 40px;
 }
 
-nav a {
-    color: #ff1a1a;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-nav a:hover {
-    color: white;
-}
-
-.cart-icon {
-    display: inline-block;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-#cart-count {
-    background: red;
-    padding: 4px 8px;
-    border-radius: 50%;
-}
-
-/* SECTIONS */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #ff1a1a;
-}
-
-/* GRID */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-/* PRODUCT CARD */
-.product {
-    background: #141414;
+.product-card {
+    background: rgba(20,20,20,0.8);
+    border: 1px solid rgba(255,0,0,0.3);
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(255,0,0,0.3);
-    transition: 0.3s;
+    text-align: center;
+    transition: 0.3s ease;
 }
 
-.product:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.4);
 }
 
-.product img {
+.product-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.price {
-    color: #ff1a1a;
-    font-size: 22px;
-}
-
-/* BUTTON */
 button {
-    background: linear-gradient(45deg, #990000, #ff1a1a);
-    border: none;
-    padding: 12px 20px;
-    color: white;
+    background: black;
+    border: 1px solid red;
+    color: red;
+    padding: 10px 20px;
     cursor: pointer;
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    margin-top: 10px;
     transition: 0.3s;
 }
 
 button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(255,0,0,0.5);
+    background: red;
+    color: black;
 }
 
-/* CART PANEL */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
 .cart-panel {
     position: fixed;
-    right: -350px;
     top: 0;
-    width: 320px;
+    right: -300px;
+    width: 300px;
     height: 100%;
     background: #111;
     padding: 20px;
     transition: 0.3s;
-    border-left: 1px solid #330000;
-    overflow-y: auto;
 }
 
 .cart-panel.active {
     right: 0;
-}
-
-.cart-total {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    border-top: 1px solid #330000;
 }
