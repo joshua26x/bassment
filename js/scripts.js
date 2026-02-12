@@ -1,44 +1,27 @@
 let cart = [];
+let total = 0;
 
 function addToCart(name, price) {
     cart.push({ name, price });
+    total += price;
     updateCart();
 }
 
 function updateCart() {
-    const cartCount = document.getElementById("cart-count");
-    const cartItems = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
 
-    cartCount.innerText = cart.length;
     cartItems.innerHTML = "";
 
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        total += item.price;
-
-        const div = document.createElement("div");
-        div.innerHTML = `
-            <p>${item.name} - $${item.price.toFixed(2)}
-            <button onclick="removeItem(${index})">X</button></p>
-        `;
-        cartItems.appendChild(div);
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item.name + " - $" + item.price;
+        cartItems.appendChild(li);
     });
 
-    cartTotal.innerText = total.toFixed(2);
-}
-
-function removeItem(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-function clearCart() {
-    cart = [];
-    updateCart();
+    cartTotal.textContent = "Total: $" + total;
 }
 
 function toggleCart() {
-    document.getElementById("cart-panel").classList.toggle("active");
+    document.getElementById("cartPanel").classList.toggle("active");
 }
