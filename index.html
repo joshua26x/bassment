@@ -4,128 +4,48 @@
     <meta charset="UTF-8">
     <title>BASSMENT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <h1 class="logo">
-        <span>BASS</span><span>MENT</span>
-    </h1>
-    <p class="tagline">Feel the Bass. Fuel the Chaos.</p>
-</header>
+    <div class="overlay"></div>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#products">Products</a>
-    <a href="#gaming">Gaming</a>
-    <a href="#collab">Collab</a>
+    <header>
+        <h1 class="logo flicker">
+            <span>BASS</span><span>MENT</span>
+        </h1>
+        <p class="tagline">Feel the Bass. Fuel the Chaos.</p>
+    </header>
 
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cart-count">0</span>
+    <section class="products">
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/product1.jpg" alt="Headphones">
+                <h3>Underground Headphones</h3>
+                <p>$129</p>
+                <button onclick="addToCart('Headphones',129)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/product2.jpg" alt="Gaming Gear">
+                <h3>Street Gaming Rig</h3>
+                <p>$899</p>
+                <button onclick="addToCart('Gaming Rig',899)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cart-panel" id="cartPanel">
+        <h2>Cart</h2>
+        <ul id="cartItems"></ul>
+        <p id="cartTotal">Total: $0</p>
+        <button onclick="toggleCart()">Close</button>
     </div>
-</nav>
 
-<section class="container" id="products">
-    <h2>Core Collection</h2>
+    <button class="cart-button" onclick="toggleCart()">Cart</button>
 
-    <div class="products-grid">
-
-        <div class="product">
-            <h3>BASSMENT Ragnar</h3>
-            <img src="images/product1.jpeg" alt="">
-            <p>High-fidelity headphones built for deep impact.</p>
-            <p class="price">$89.99</p>
-            <button onclick="addToCart('BASSMENT Ragnar', 89.99)">Add to Cart</button>
-        </div>
-
-        <div class="product">
-            <h3>BASSMENT Thor</h3>
-            <img src="images/product2.jpeg" alt="">
-            <p>Studio-level speakers with brutal clarity.</p>
-            <p class="price">$79.99</p>
-            <button onclick="addToCart('BASSMENT Thor', 79.99)">Add to Cart</button>
-        </div>
-
-        <div class="product">
-            <h3>BASSMENT Asgard</h3>
-            <img src="images/product3.jpeg" alt="">
-            <p>Compact chaos for your daily grind.</p>
-            <p class="price">$69.99</p>
-            <button onclick="addToCart('BASSMENT Asgard', 69.99)">Add to Cart</button>
-        </div>
-
-        <div class="product">
-            <h3>BASSMENT Odin</h3>
-            <img src="images/product4.jpeg" alt="">
-            <p>Wireless freedom. Pure underground energy.</p>
-            <p class="price">$89.99</p>
-            <button onclick="addToCart('BASSMENT Odin', 89.99)">Add to Cart</button>
-        </div>
-
-    </div>
-</section>
-
-<section class="container" id="gaming">
-    <h2>Gaming Division</h2>
-    <div class="products-grid">
-
-        <div class="product">
-            <h3>Valhalla Keyboard</h3>
-            <img src="images/gaming-keyboard.jpeg" alt="">
-            <p>Mechanical precision with street DNA.</p>
-            <p class="price">$59.99</p>
-            <button onclick="addToCart('Valhalla Keyboard', 59.99)">Add to Cart</button>
-        </div>
-
-        <div class="product">
-            <h3>Norse Mouse</h3>
-            <img src="images/gaming-mouse.jpeg" alt="">
-            <p>Fast. Aggressive. Built to dominate.</p>
-            <p class="price">$39.99</p>
-            <button onclick="addToCart('Norse Mouse', 39.99)">Add to Cart</button>
-        </div>
-
-    </div>
-</section>
-
-<section class="container" id="collab">
-    <h2>BASSMENT X SLIPKNOT</h2>
-    <div class="products-grid">
-
-        <div class="product collab">
-            <h3>CRAHAN Edition</h3>
-            <img src="images/slipknot-headphones.jpeg" alt="">
-            <p>Limited. Loud. Ruthless.</p>
-            <p class="price">$149.99</p>
-            <button onclick="addToCart('CRAHAN Edition', 149.99)">Add to Cart</button>
-        </div>
-
-        <div class="product collab">
-            <h3>THOMSON Edition</h3>
-            <img src="images/slipknot-speakers.jpeg" alt="">
-            <p>Darkness meets distortion.</p>
-            <p class="price">$149.99</p>
-            <button onclick="addToCart('THOMSON Edition', 149.99)">Add to Cart</button>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 BASSMENT. Underground by Design.</p>
-</footer>
-
-<div id="cart-panel" class="cart-panel">
-    <h2>Your Cart</h2>
-    <div id="cart-items"></div>
-    <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
-    <button onclick="clearCart()">Clear Cart</button>
-</div>
-
-<script src="js/scripts.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
