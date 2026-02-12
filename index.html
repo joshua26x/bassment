@@ -1,113 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BASSMENT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        </div>
-        <h1 class="flicker">B A S S M E N T</h1>
-        <p>Feel the Bass, Fuel your Passion</p>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div class="container">
-        <h2>Our Products</h2>
 
-        <!-- Normal Products -->
-        <div class="product normal-product">
-            <h3>BASSMENT Ragnar</h3>
-            <img src="images/product1.jpeg" height="50" alt="Bassment Headphones">
-            <p>High-quality headphones with deep bass and crystal-clear sound. Perfect for audiophiles.</p>
-            <p>Price: $89.99</p>
-            <button>Add to Cart</button>
-            <button>Customize</button>
-        </div>
-        <div class="product normal-product">
-            <h3>BASSMENT Thor</h3>
-            <img src="images/product2.jpeg" alt="Bassment Speakers">
-            <p>Powerful bass radiators with premium sound quality. Ideal for home or studio use.</p>
-            <p>Price: $79.99</p>
-            <button>Add to Cart</button>
-            <button>Customize</button>
-        </div>
-        <div class="product normal-product">
-            <h3>BASSMENT Asgard</h3>
-            <img src="images/product3.jpeg" height="50" alt="Bassment Earphones">
-            <p>Compact earphones with immersive bass, designed for those who appreciate high-quality sound on the go.</p>
-            <p>Price: $69.99</p>
-            <button>Add to Cart</button>
-            <button>Customize</button>
-        </div>
-        <div class="product normal-product">
-            <h3>BASSMENT Odin</h3>
-            <img src="images/product4.jpeg" height="50" alt="Bassment Earbuds">
-            <p>Wireless earbuds with superior bass, perfect for music lovers and active users.</p>
-            <p>Price: $89.99</p>
-            <button>Add to Cart</button>
-            <button>Customize</button>
-        </div>
+<header>
+    <h1 class="logo">
+        <span>BASS</span>
+        <span>MENT</span>
+    </h1>
+    <p class="tagline">Feel the Bass. Fuel the Chaos.</p>
+</header>
 
-        <!-- Gaming Products Section -->
-        <div class="gaming-section">
-            <h2>Gaming Products</h2>
-            <p style="text-align: center;">Enhance your gaming experience with our top-notch gaming gear.</p>
+<nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#collab">Collab</a>
 
-            <div class="product gaming-product">
-                <h3>Valhalla Gaming Keyboard</h3>
-                <img src="images/gaming-keyboard.jpeg" alt="Gaming Keyboard">
-                <p>Precision gaming meets ultimate comfort with a high-fidelity, ergonomic design.</p>
-                <p>Price: $59.99</p>
-                <button>Add to Cart</button>
-                <button>Customize</button>
-            </div>
-            <div class="product gaming-product">
-                <h3>Norse Gaming Mouse</h3>
-                <img src="images/gaming-mouse.jpeg" alt="Gaming Mouse">
-                <p>Precision gaming mouse with customizable buttons and RGB lighting.</p>
-                <p>Price: $39.99</p>
-                <button>Add to Cart</button>
-                <button>Customize</button>
-            </div>
-        </div>
-
-        <!-- Slipknot Collaboration Section -->
-        <div class="slipknot-section">
-            <h2>BASSMENT X SLIPKNOT</h2>
-            <p style="text-align: center;">Unleash the darkness with our limited edition Slipknot-inspired headphones, speakers, earphones, and earbuds.</p>
-
-            <div class="product slipknot-product">
-                <h3>Slipknot Edition Headphones - CRAHAN</h3>
-                <img src="images/slipknot-headphones.jpeg" alt="Slipknot Edition Headphones">
-                <p>Feel the bass and fury with these limited edition headphones featuring Slipknot's signature design.</p>
-                <p>Price: $149.99</p>
-                <button>Add to Cart</button>
-                <button>Customize</button>
-            </div>
-            <div class="product slipknot-product">
-                <h3>Slipknot Edition Speakers - THOMSON</h3>
-                <img src="images/slipknot-speakers.jpeg" alt="Slipknot Edition Speakers">
-                <p>Powerful bass radiators with Slipknot's distinctive design and sound.</p>
-                <p>Price: $149.99</p>
-                <button>Add to Cart</button>
-                <button>Customize</button>
-            </div>
-        </div>
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
     </div>
-    <footer>
-        <p style="text-align: center;">&copy; 2024 Bassment. All rights reserved.</p>
-    </footer>
-    <script src="js/scripts.js"></script>
-</body>
+</nav>
 
+<section class="container" id="products">
+    <h2>Core Collection</h2>
+
+    <div class="products-grid">
+
+        <div class="product">
+            <h3>BASSMENT Ragnar</h3>
+            <img src="images/product1.jpeg" alt="">
+            <p>High-fidelity headphones built for deep impact.</p>
+            <p class="price">$89.99</p>
+            <button onclick="addToCart('BASSMENT Ragnar', 89.99)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>BASSMENT Thor</h3>
+            <img src="images/product2.jpeg" alt="">
+            <p>Studio-level speakers with brutal clarity.</p>
+            <p class="price">$79.99</p>
+            <button onclick="addToCart('BASSMENT Thor', 79.99)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>BASSMENT Asgard</h3>
+            <img src="images/product3.jpeg" alt="">
+            <p>Compact chaos for your daily grind.</p>
+            <p class="price">$69.99</p>
+            <button onclick="addToCart('BASSMENT Asgard', 69.99)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>BASSMENT Odin</h3>
+            <img src="images/product4.jpeg" alt="">
+            <p>Wireless freedom. Pure underground energy.</p>
+            <p class="price">$89.99</p>
+            <button onclick="addToCart('BASSMENT Odin', 89.99)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="gaming">
+    <h2>Gaming Division</h2>
+    <div class="products-grid">
+
+        <div class="product">
+            <h3>Valhalla Keyboard</h3>
+            <img src="images/gaming-keyboard.jpeg" alt="">
+            <p>Mechanical precision with street DNA.</p>
+            <p class="price">$59.99</p>
+            <button onclick="addToCart('Valhalla Keyboard', 59.99)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Norse Mouse</h3>
+            <img src="images/gaming-mouse.jpeg" alt="">
+            <p>Fast. Aggressive. Built to dominate.</p>
+            <p class="price">$39.99</p>
+            <button onclick="addToCart('Norse Mouse', 39.99)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="collab">
+    <h2>BASSMENT X SLIPKNOT</h2>
+    <div class="products-grid">
+
+        <div class="product collab">
+            <h3>CRAHAN Edition</h3>
+            <img src="images/slipknot-headphones.jpeg" alt="">
+            <p>Limited. Loud. Ruthless.</p>
+            <p class="price">$149.99</p>
+            <button onclick="addToCart('CRAHAN Edition', 149.99)">Add to Cart</button>
+        </div>
+
+        <div class="product collab">
+            <h3>THOMSON Edition</h3>
+            <img src="images/slipknot-speakers.jpeg" alt="">
+            <p>Darkness meets distortion.</p>
+            <p class="price">$149.99</p>
+            <button onclick="addToCart('THOMSON Edition', 149.99)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 BASSMENT. Underground by Design.</p>
+</footer>
+
+<!-- Cart Panel -->
+<div id="cart-panel" class="cart-panel">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+    <button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<script src="js/scripts.js"></script>
+
+</body>
 </html>
