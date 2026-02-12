@@ -1,180 +1,166 @@
-/* General Styles */
 body {
     font-family: 'VT323', monospace;
-    background-color: #0d0d0d;
-    color: #fff;
     margin: 0;
-    padding: 0;
-    font-size: 20px; /* Increased base font size */
+    background: #0b0b0b;
+    color: white;
+    scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
-    text-align: center;
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-}
-
+/* HEADER */
 header {
-    background-color: rgba(26, 26, 26, 0.9);
-    padding: 20px; /* Increased padding for better spacing */
     text-align: center;
-    border-bottom: 2px solid #ff0000;
-    animation: fadeInDown 1s ease-in-out;
-    position: relative;
+    padding: 40px 20px;
+    background: #111;
+    border-bottom: 1px solid #330000;
 }
 
-header .logo {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 70px;
+    letter-spacing: 8px;
+    color: #ff1a1a;
+    text-shadow:
+        0 0 4px rgba(255,0,0,0.6),
+        0 0 12px rgba(255,0,0,0.4),
+        0 0 24px rgba(255,0,0,0.2);
 }
 
-header .logo img {
-    max-width: 120px;
-    height: auto;
-}
-
-/* Main Header Flicker Effect */
-.flicker {
-    letter-spacing: 25px;
-    font-size: 60px;
-    animation: flickerAnimation 4s infinite;
-}
-
-
-@keyframes flickerAnimation {
-    0%, 09.999%, 12%, 52.999%, 54%, 54.999%, 70%, 90% {
-        opacity: 0.8;
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
-    }
-    10%, 11.999%, 53%, 53.999%, 55%, 59.999% {
-        opacity: 0.4;
-        text-shadow: none;
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        font-size: 50px;
+        letter-spacing: 6px;
     }
 }
 
+.tagline {
+    opacity: 0.7;
+}
+
+/* NAV */
 nav {
-    background-color: rgba(26, 26, 26, 0.9);
-    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    background: #111;
+    padding: 15px;
     text-align: center;
-    border-bottom: 2px solid #ff0000;
+    border-bottom: 1px solid #330000;
+    z-index: 1000;
 }
 
 nav a {
-    color: #ff0000;
+    color: #ff1a1a;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 18px;
-    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #fff;
+    color: white;
 }
 
+.cart-icon {
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#cart-count {
+    background: red;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+/* CONTAINER */
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
 h2 {
-    margin-top: 50px;
-    font-size: 36px;
-    animation: textGlow 1.5s infinite alternate;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-/* Product Styles */
-.product {
-    background-color: rgba(26, 26, 26, 0.9);
-    padding: 20px;
-    margin-bottom: 30px;
-    border-radius: 10px;
     text-align: center;
-    border: 1px solid #ff0000;
-    animation: fadeInUp 1s ease-in-out;
-    max-width: 500px;
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
+    color: #ff1a1a;
+}
+
+/* GRID */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* PRODUCT CARD */
+.product {
+    background: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,0,0,0.3);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
 }
 
 .product img {
-    max-width: 300px;
-    height: auto;
-    filter: grayscale(100%) brightness(70%) contrast(150%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    border-radius: 5px;
 }
 
-.product img:hover {
-    filter: grayscale(0%) brightness(100%) contrast(100%);
-    transform: scale(1.1);
+.price {
+    color: #ff1a1a;
+    font-size: 22px;
 }
 
-/* Updated Button Styles */
+/* BUTTON */
 button {
-    background-color: #ff0000;
-    color: #fff;
+    background: linear-gradient(45deg, #990000, #ff1a1a);
     border: none;
-    padding: 10px 20px;
-    margin: 10px 5px;
+    padding: 12px 20px;
+    color: white;
     cursor: pointer;
-    font-family: 'VT323', monospace; /* Updated font */
+    font-family: 'VT323', monospace;
     font-size: 18px;
-    letter-spacing: 2px; /* To match the overall theme */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #cc0000;
-    transform: scale(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255,0,0,0.5);
 }
 
-/* Slipknot Collaboration Styles */
-.slipknot-section h2 {
-    color: #fff;
-    text-shadow: 0 0 10px #000, 0 0 20px #ff0000;
+/* CART PANEL */
+.cart-panel {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    transition: 0.3s;
+    border-left: 1px solid #330000;
+    overflow-y: auto;
 }
 
-.slipknot-product {
-    border: 1px solid #ff0000;
-    background-color: #0d0d0d;
+.cart-panel.active {
+    right: 0;
 }
 
-/* Animation Definitions */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.cart-total {
+    margin-top: 20px;
+    font-size: 20px;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textGlow {
-    from {
-        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
-    }
-    to {
-        text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
-    }
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    border-top: 1px solid #330000;
 }
